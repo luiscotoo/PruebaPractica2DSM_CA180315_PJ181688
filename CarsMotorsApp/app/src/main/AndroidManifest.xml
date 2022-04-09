@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarsMotorsApp">
         <activity
+<<<<<<< HEAD
             android:name=".VistaVehiculos"
             android:exported="true" />
+=======
             android:name=".Registrarse"
             android:exported="false" />
+>>>>>>> 96a6128aeb17b585fee430cc1c30becdd3c1bb6f
         <activity
             android:name=".CrudUsuarios"
             android:exported="true" />
