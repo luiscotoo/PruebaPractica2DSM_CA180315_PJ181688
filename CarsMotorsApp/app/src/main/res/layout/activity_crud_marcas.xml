@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fontFamily="sans-serif"
+    android:background="#FFFFFF"
+    tools:context=".CrudMarcas">
+
+    <TextView
+        android:id="@+id/Marca"
+        android:layout_width="289dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="49dp"
+        android:ems="10"
+        android:text="CRUD MARCAS"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#14213D"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tvCodigo"
+        android:layout_width="289dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="141dp"
+        android:ems="10"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#14213D"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etMarca"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="185dp"
+        android:ems="10"
+        android:hint="Ingrese Marca"
+        android:inputType="text"
+        android:textColor="#14213D"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btnIngresarM"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="310dp"
+        android:backgroundTint="#3D3014"
+        android:onClick="Ingresar"
+        android:text="Registrar Marca"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnBuscarM"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="365dp"
+        android:backgroundTint="#3D3014"
+        android:onClick="Buscar"
+        android:text="Buscar Marcas"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnActualizarM"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="421dp"
+        android:backgroundTint="#3D3014"
+        android:onClick="Actualizar"
+        android:text="Actualizar Marca"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnBorrarM"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="477dp"
+        android:backgroundTint="#3D3014"
+        android:onClick="Borrar"
+        android:text="Eliminar Marca"
+        android:textColor="#FFFFFF" />
+
+
+</RelativeLayout>

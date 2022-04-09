@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarsMotorsApp">
         <activity
+            android:name=".CrudUsarios"
+            android:exported="true" />
+        <activity
+            android:name=".CrudAutomovil"
+            android:exported="true" />
+        <activity
+            android:name=".CrudTipoAuto"
+            android:exported="true" />
+        <activity
+            android:name=".CrudColores"
+            android:exported="true" />
+        <activity
+            android:name=".CrudMarcas"
+            android:exported="true" />
+        <activity
             android:name=".MenuAdmin"
             android:exported="false" />
         <activity
