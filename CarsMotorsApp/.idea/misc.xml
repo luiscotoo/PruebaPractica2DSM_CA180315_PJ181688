@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_menu_admin.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_menu_cliente.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

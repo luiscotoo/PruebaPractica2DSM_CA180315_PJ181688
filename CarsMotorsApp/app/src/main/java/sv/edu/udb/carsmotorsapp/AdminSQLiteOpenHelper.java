@@ -26,6 +26,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("create table favoritos_automovil(idfavoritosautomovil integer primary key autoincrement,idusuario integer,idfavoritoautomovil integer,fecha_agregado timestamp," +
                 "FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON UPDATE CASCADE ON DELETE CASCADE," +
                 "FOREIGN KEY(idfavoritoautomovil) REFERENCES automovil(idautomovil) ON UPDATE CASCADE ON DELETE CASCADE)");
+        db.execSQL("INSERT INTO usuario(nombres,apellidos,email,user,password,tipo) VALUES ('luis','coto','hola.com','cotaxo','12345','admin')");
+        db.execSQL("INSERT INTO usuario(nombres,apellidos,email,user,password,tipo) VALUES ('bryan','perez','adios.com','bryan','12345','cliente')");
 
     }
 
