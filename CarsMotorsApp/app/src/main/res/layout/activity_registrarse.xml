@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registrarse">
+
+    <TextView
+        android:id="@+id/tvTituloRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="177dp"
+        android:text="Regístrate en Cars Motors"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNombreRegister"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="71dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloRegistrar" />
+
+    <EditText
+        android:id="@+id/etApellidoRegister"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="71dp"
+        android:ems="10"
+        android:hint="Apellido"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreRegister" />
+
+    <EditText
+        android:id="@+id/etEmailRegister"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="71dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etApellidoRegister" />
+
+    <EditText
+        android:id="@+id/etUsuarioRegister"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="71dp"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailRegister" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="113dp"
+        android:onClick="registrarse"
+        android:text="Registrarse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etContraConfRegister" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="113dp"
+        android:backgroundTint="#DF1111"
+        android:onClick="salir"
+        android:text="Volver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
+
+    <EditText
+        android:id="@+id/etContraRegister"
+        android:layout_width="268dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="71dp"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUsuarioRegister" />
+
+    <EditText
+        android:id="@+id/etContraConfRegister"
+        android:layout_width="268dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="71dp"
+        android:ems="10"
+        android:hint="Confirmar Contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etContraRegister" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

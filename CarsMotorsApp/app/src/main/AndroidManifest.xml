@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarsMotorsApp">
         <activity
+            android:name=".Registrarse"
+            android:exported="false" />
+        <activity
             android:name=".CrudUsuarios"
             android:exported="true" />
         <activity
