@@ -12,6 +12,8 @@
         <activity
             android:name=".VistaVehiculos"
             android:exported="true" />
+            android:name=".Registrarse"
+            android:exported="false" />
         <activity
             android:name=".CrudUsuarios"
             android:exported="true" />

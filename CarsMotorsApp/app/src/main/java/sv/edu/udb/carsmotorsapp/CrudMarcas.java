@@ -28,7 +28,7 @@ public class CrudMarcas extends AppCompatActivity {
         SQLiteDatabase bd= admin.getWritableDatabase();
         String id = etIdMarca.getText().toString();
         String Nombre=etMarca.getText().toString();
-        ContentValues registro=new ContentValues();;
+        ContentValues registro=new ContentValues();
         if(Nombre.isEmpty()){
             Toast.makeText(this,"Ingrese un nombre",Toast.LENGTH_SHORT).show();
         }else{

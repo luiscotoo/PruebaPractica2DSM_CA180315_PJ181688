@@ -46,6 +46,11 @@ public class Login extends AppCompatActivity {
         bd.close();
     }
 
+    public void IrRegistrarse(View v){
+        Intent intent = new Intent(this,Registrarse.class);
+        startActivity(intent);
+    }
+
     public void salir(View v){
         finish();
     }
