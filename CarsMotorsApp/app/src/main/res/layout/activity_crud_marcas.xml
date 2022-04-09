@@ -27,23 +27,6 @@
         android:textStyle="bold" />
 
 
-    <TextView
-        android:id="@+id/tvCodigo"
-        android:layout_width="289dp"
-        android:layout_height="33dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="141dp"
-        android:ems="10"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#14213D"
-        android:textSize="18dp"
-        android:textStyle="bold" />
-
     <EditText
         android:id="@+id/etMarca"
         android:layout_width="382dp"
@@ -51,11 +34,27 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="185dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="230dp"
         android:ems="10"
-        android:hint="Ingrese Marca"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="#14213D"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/etIdMarca"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="163dp"
+        android:ems="10"
+        android:hint="ID (Sólo para actualizar)"
         android:inputType="text"
         android:textColor="#14213D"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
@@ -103,7 +102,7 @@
         android:layout_marginTop="421dp"
         android:backgroundTint="#3D3014"
         android:onClick="Actualizar"
-        android:text="Actualizar Marca"
+        android:text="Actualizar Marca por ID"
         android:textColor="#FFFFFF" />
 
     <Button
