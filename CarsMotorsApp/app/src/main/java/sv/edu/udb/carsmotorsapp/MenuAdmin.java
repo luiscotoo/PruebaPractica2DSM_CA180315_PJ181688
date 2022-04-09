@@ -28,4 +28,23 @@ public class MenuAdmin extends AppCompatActivity {
         Intent llamar = new Intent(this, CrudMarcas.class);
         startActivity(llamar);
     }
+
+    public void CrudUsuarios(View v){
+        Intent llamar = new Intent(this, CrudUsuarios.class);
+        startActivity(llamar);
+    }
+
+    public void CrudTipoAuto(View v){
+        Intent llamar = new Intent(this, CrudTipoAuto.class);
+        startActivity(llamar);
+    }
+
+    public void CrudColores(View v){
+        Intent llamar = new Intent(this, CrudColores.class);
+        startActivity(llamar);
+    }
+    public void CrudAutomovil(View v){
+        Intent llamar = new Intent(this, CrudAutomovil.class);
+        startActivity(llamar);
+    }
 }

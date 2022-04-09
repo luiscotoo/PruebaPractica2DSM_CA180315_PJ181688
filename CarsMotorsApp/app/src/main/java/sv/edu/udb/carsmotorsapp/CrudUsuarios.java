@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CrudUsarios extends AppCompatActivity {
+public class CrudUsuarios extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crud_usarios);
+        setContentView(R.layout.activity_crud_usuarios);
     }
 }

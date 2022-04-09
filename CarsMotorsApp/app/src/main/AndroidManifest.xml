@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarsMotorsApp">
         <activity
-            android:name=".CrudUsarios"
+            android:name=".CrudUsuarios"
             android:exported="true" />
         <activity
             android:name=".CrudAutomovil"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrudUsarios">
+    tools:context=".CrudUsuarios">
 
 
 
@@ -141,15 +141,31 @@
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <Button
+        android:id="@+id/btnIngresarV"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="423dp"
+        android:backgroundTint="#3D3014"
+        android:onClick="Ingresar"
+        android:text="Ingresar Usuario"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
+
+    <Button
         android:id="@+id/btnBuscarv"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="556dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="478dp"
         android:backgroundTint="#3D3014"
         android:onClick="Buscar"
         android:text="Buscar Usuarios"
@@ -162,28 +178,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="668dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="590dp"
         android:backgroundTint="#3D3014"
         android:onClick="Borrar"
         android:text="Eliminar Usuario"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/btnIngresarV"
-        android:layout_width="298dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="501dp"
-        android:backgroundTint="#3D3014"
-        android:onClick="Ingresar"
-        android:text="Ingresar Usuario"
-        android:textAlignment="center"
         android:textColor="#FFFFFF" />
 
     <Button
@@ -193,9 +193,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="612dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="534dp"
         android:backgroundTint="#3D3014"
         android:onClick="Actualizar"
         android:text="Actualizar Usuario"
