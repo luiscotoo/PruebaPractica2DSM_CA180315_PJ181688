@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarsMotorsApp">
         <activity
+            android:name=".VistaVehiculos"
+            android:exported="true" />
+        <activity
             android:name=".CrudUsuarios"
             android:exported="true" />
         <activity

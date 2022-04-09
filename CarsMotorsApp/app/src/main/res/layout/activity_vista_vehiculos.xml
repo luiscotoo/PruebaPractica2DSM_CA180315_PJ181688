@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VistaVehiculos">
+
+
+    <TextView
+        android:id="@+id/Vehiculos"
+        android:layout_width="289dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:text="VEHICULOS"
+        android:textAlignment="center"
+        android:textColor="#14213D"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="16dp"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="385dp"
+        android:layout_height="680dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+
+        tools:ignore="MissingConstraints"></androidx.recyclerview.widget.RecyclerView>
+
+
+</RelativeLayout>

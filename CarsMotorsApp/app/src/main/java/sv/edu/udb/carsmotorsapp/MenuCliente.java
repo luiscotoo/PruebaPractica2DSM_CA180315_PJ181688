@@ -2,6 +2,7 @@ package sv.edu.udb.carsmotorsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -22,4 +23,11 @@ public class MenuCliente extends AppCompatActivity {
     public void salir(View v){
         finish();
     }
+
+    public void Vehiculos(View v){
+        Intent llamar = new Intent(this, VistaVehiculos.class);
+        startActivity(llamar);
+    }
+
+
 }
