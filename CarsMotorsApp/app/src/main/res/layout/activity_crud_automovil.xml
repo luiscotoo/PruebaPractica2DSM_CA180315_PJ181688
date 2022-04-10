@@ -6,8 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".CrudAutomovil">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
+            <Spinner
+                android:id="@+id/lisColor"
+                android:layout_width="381dp"
+                android:layout_height="33dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="216dp" />
+
+            <Spinner
+                android:id="@+id/lisTipo"
+                android:layout_width="381dp"
+                android:layout_height="33dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="175dp" />
+
+            <Spinner
+                android:id="@+id/LisMarcas"
+                android:layout_width="381dp"
+                android:layout_height="33dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="81dp" />
+
+            <TextView
         android:id="@+id/Automotivl"
         android:layout_width="289dp"
         android:layout_height="33dp"
@@ -25,211 +65,213 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvCodigo"
-        android:layout_width="289dp"
-        android:layout_height="33dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="29dp"
-        android:ems="10"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#14213D"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+            <EditText
+                android:id="@+id/etModelo"
+                android:layout_width="382dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="121dp"
+                android:ems="10"
+                android:hint="Ingrese El modelo"
+                android:inputType="text"
+                android:textColor="#14213D"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/etModelo"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="69dp"
-        android:ems="10"
-        android:hint="Ingrese El modelo"
-        android:inputType="text"
-        android:textColor="#14213D"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <TextView
+                android:id="@+id/tvCodigo"
+                android:layout_width="289dp"
+                android:layout_height="33dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="41dp"
+                android:ems="10"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#14213D"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/etNumeroCha"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="164dp"
-        android:ems="10"
-        android:hint="Ingrese El numero del Chasis"
-        android:inputType="text"
-        android:textColor="#14213D"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <EditText
+                android:id="@+id/etNumeroVin"
+                android:layout_width="382dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="256dp"
+                android:ems="10"
+                android:hint="Ingrese El numero VIN"
+                android:inputType="text"
+                android:textColor="#14213D"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/etAnio"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="298dp"
-        android:ems="10"
-        android:hint="Año del vehiculo"
-        android:inputType="number"
-        android:textColor="#14213D"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <EditText
+                android:id="@+id/etAnio"
+                android:layout_width="382dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="471dp"
+                android:ems="10"
+                android:hint="Año del vehiculo"
+                android:inputType="number"
+                android:textColor="#14213D"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/etPrecio"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="343dp"
-        android:ems="10"
-        android:hint="Ingrese Precio"
-        android:inputType="numberDecimal"
-        android:textColor="#14213D"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <EditText
+                android:id="@+id/etPrecio"
+                android:layout_width="382dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="525dp"
+                android:ems="10"
+                android:hint="Ingrese Precio"
+                android:inputType="numberDecimal"
+                android:textColor="#14213D"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/etDescripcion"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="393dp"
-        android:ems="10"
-        android:hint="Ingrese Descripcion"
-        android:inputType="text"
-        android:textColor="#14213D"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <EditText
+                android:id="@+id/etDescripcion"
+                android:layout_width="382dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="576dp"
+                android:ems="10"
+                android:hint="Ingrese Descripcion"
+                android:inputType="text"
+                android:textColor="#14213D"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/etNumeroMotor"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="208dp"
-        android:ems="10"
-        android:hint="Ingrese El numero del motor"
-        android:inputType="text"
-        android:textColor="#14213D"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <EditText
+                android:id="@+id/etNumeroMotor"
+                android:layout_width="382dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="364dp"
+                android:ems="10"
+                android:hint="Ingrese El numero del motor"
+                android:inputType="text"
+                android:textColor="#14213D"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/etNumeroAsi"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="252dp"
-        android:ems="10"
-        android:hint="Ingrese El numero de asiento"
-        android:inputType="number"
-        android:textColor="#14213D"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <EditText
+                android:id="@+id/etNumeroAsi"
+                android:layout_width="382dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="417dp"
+                android:ems="10"
+                android:hint="Ingrese El numero de asiento"
+                android:inputType="number"
+                android:textColor="#14213D"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <EditText
-        android:id="@+id/etNumeroVin"
-        android:layout_width="382dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="118dp"
-        android:ems="10"
-        android:hint="Ingrese El numero VIN"
-        android:inputType="text"
-        android:textColor="#14213D"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            <EditText
+                android:id="@+id/etNumeroCha"
+                android:layout_width="382dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="311dp"
+                android:ems="10"
+                android:hint="Ingrese El numero del Chasis"
+                android:inputType="text"
+                android:textColor="#14213D"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <Button
-        android:id="@+id/btnIngresarV"
-        android:layout_width="298dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="457dp"
-        android:backgroundTint="#3D3014"
-        android:onClick="Ingresar"
-        android:text="Ingresar Vehiculo"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/btnIngresarV"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginLeft="51dp"
+                android:layout_marginTop="630dp"
+                android:backgroundTint="#3D3014"
+                android:onClick="Ingresar"
+                android:text="Ingresar Vehiculo"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/btnBuscarv"
-        android:layout_width="298dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="504dp"
-        android:backgroundTint="#3D3014"
-        android:onClick="Buscar"
-        android:text="Buscar Vehiculos"
-        android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/btnBuscarv"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginLeft="51dp"
+                android:layout_marginTop="677dp"
+                android:backgroundTint="#3D3014"
+                android:onClick="Buscar"
+                android:text="Buscar Vehiculos"
+                android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/btnBorrarV"
-        android:layout_width="298dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="593dp"
-        android:backgroundTint="#3D3014"
-        android:onClick="Borrar"
-        android:text="Eliminar Vehiculo"
-        android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/btnBorrarV"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginLeft="51dp"
+                android:layout_marginTop="766dp"
+                android:backgroundTint="#3D3014"
+                android:onClick="Borrar"
+                android:text="Eliminar Vehiculo"
+                android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/btnActualizarV"
-        android:layout_width="298dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="548dp"
-        android:backgroundTint="#3D3014"
-        android:onClick="Actualizar"
-        android:text="Actualizar Vehiculo"
-        android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/btnActualizarV"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginLeft="51dp"
+                android:layout_marginTop="721dp"
+                android:backgroundTint="#3D3014"
+                android:onClick="Actualizar"
+                android:text="Actualizar Vehiculo"
+                android:textColor="#FFFFFF" />
 
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
