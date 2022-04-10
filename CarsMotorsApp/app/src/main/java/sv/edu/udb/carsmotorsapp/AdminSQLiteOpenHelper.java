@@ -19,7 +19,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("create table usuario(idusuario integer primary key autoincrement,nombres VARCHAR(45),apellidos VARCHAR(45), email VARCHAR(45), user VARCHAR(45) UNIQUE," +
                 " password VARCHAR(45),tipo VARCHAR(45))");
         db.execSQL("create table automovil(idautomovil integer primary key autoincrement,modelo VARCHAR(45), numero_vin VARCHAR(45), numero_chasis VARCHAR(45), numero_motor VARCHAR(45)," +
-                "numero_asientos integer, anio year,capacidad_asientos int,precio decimal(10,2), URI_IMG VARCHAR(45), descripcion VARCHAR(45),idmarcas integer,idtipoautomovil integer," +
+                "numero_asientos integer, anio varchar,capacidad_asientos int,precio decimal(10,2), URI_IMG VARCHAR(45), descripcion VARCHAR(45),idmarcas integer,idtipoautomovil integer," +
                 "idcolores integer,FOREIGN KEY(idmarcas) REFERENCES marcas(idmarcas) ON UPDATE CASCADE ON DELETE CASCADE," +
                 "FOREIGN KEY(idtipoautomovil) REFERENCES tipo_automovil(idtipoautomovil) ON UPDATE CASCADE ON DELETE CASCADE," +
                 "FOREIGN KEY(idcolores) REFERENCES colores(idcolores) ON UPDATE CASCADE ON DELETE CASCADE)");

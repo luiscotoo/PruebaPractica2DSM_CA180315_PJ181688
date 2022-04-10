@@ -134,20 +134,19 @@ public class CrudAutomovil extends AppCompatActivity {
         String numero_vin=etNumeroVin.getText().toString();
         String numero_chasis=etNumeroCha.getText().toString();
         String numero_motor=etNumeroMotor.getText().toString();
-        String numero_asientos=etNumeroAsi.getText().toString();
-        String anio=etAnio.getText().toString();
-        String capacidad_asientos=etCapacidadAsi.getText().toString();
-        String precio=etPrecio.getText().toString();
+        Integer numero_asientos=Integer.parseInt(etNumeroAsi.getText().toString());
+        Integer anio=Integer.parseInt(etAnio.getText().toString());
+        Integer capacidad_asientos=Integer.parseInt(etCapacidadAsi.getText().toString());
+        Double precio=Double.parseDouble(etPrecio.getText().toString());
         String imagen=etImagen.getText().toString();
         String descripcion=etDescripcion.getText().toString();
-        int idmarcas=comboMarcas.getSelectedItemPosition();
-        int idtipoautomovil=comboTipos.getSelectedItemPosition() +1;
-        int idcolores=comboColores.getSelectedItemPosition() +1;
+        Integer idmarcas=Integer.parseInt(String.valueOf(comboMarcas.getSelectedItemPosition()+1));
+        Integer idtipoautomovil=Integer.parseInt(String.valueOf(comboTipos.getSelectedItemPosition()+1));
+        Integer idcolores=Integer.parseInt(String.valueOf(comboColores.getSelectedItemPosition()+1));
         ContentValues registro=new ContentValues();
         if(modelo.isEmpty()){
             Toast.makeText(this,"Ingrese un modelo",Toast.LENGTH_SHORT).show();
         }else{
-            registro.put("idautomovil",id);
             registro.put("modelo",modelo);
             registro.put("numero_vin",numero_vin);
             registro.put("numero_chasis",numero_chasis);
@@ -177,10 +176,36 @@ public class CrudAutomovil extends AppCompatActivity {
             comboColores.setId(0);
             comboTipos.setId(0);
             Toast.makeText(this,"Se ingreso el automovil", Toast.LENGTH_SHORT).show();
-
         }
         bd.close();
-
     }
+    public void Buscar(View v){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"CarsMotorsDB", null, 1);
+        SQLiteDatabase bd= admin.getWritableDatabase();
+        String modelo=etModelo.getText().toString();
+        if(modelo.isEmpty()){
+            Toast.makeText(this,"Ingrese Modelo de vehiculo",Toast.LENGTH_SHORT).show();
+        }else{
+            Cursor fila=bd.rawQuery("select idautomovil, modelo, numero_vin, numero_chasis, numero_motor, numero_asientos, anio, capacidad_asientos, precio, URI_IMG, descripcion from automovil where modelo='"+modelo+"'",null);
+            if (fila.moveToFirst()){
+                etIdAutomovil.setText(fila.getString(0));
+                etModelo.setText(fila.getString(1));
+                etNumeroVin.setText(fila.getString(2));
+                etNumeroCha.setText(fila.getString(3));
+                etNumeroMotor.setText(fila.getString(4));
+                etNumeroAsi.setText(fila.getString(5));
+                etAnio.setText(fila.getString(6));
+                etCapacidadAsi.setText(fila.getString(7));
+                etPrecio.setText(fila.getString(8));
+                etImagen.setText(fila.getString(9));
+                etDescripcion.setText(fila.getString(10));
+                Toast.makeText(this,"Vehiculp Encontrado con exito",Toast.LENGTH_SHORT).show();
+            }
+            else
+                Toast.makeText(this,"No existe vehiculo",Toast.LENGTH_SHORT).show();
+        }
+        bd.close();
+    }
+
 
     }
