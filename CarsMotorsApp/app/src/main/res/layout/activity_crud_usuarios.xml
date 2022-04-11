@@ -55,11 +55,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="58dp"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:hint="ID"
+        android:hint="ID (sólo para modificar)"
         android:inputType="text"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
         android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 

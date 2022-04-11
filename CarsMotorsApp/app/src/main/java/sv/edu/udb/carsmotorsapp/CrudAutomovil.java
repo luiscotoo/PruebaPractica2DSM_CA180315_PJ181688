@@ -1,10 +1,18 @@
 package sv.edu.udb.carsmotorsapp;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.PackageManagerCompat;
 
+import android.Manifest;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -18,14 +26,28 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class CrudAutomovil extends AppCompatActivity {
     private Spinner comboMarcas, comboColores, comboTipos;
-    private EditText etIdAutomovil,etModelo, etNumeroVin, etNumeroCha, etNumeroMotor, etNumeroAsi,etAnio,etCapacidadAsi,etPrecio,etImagen,etDescripcion;
+    private EditText etIdAutomovil,etModelo, etNumeroVin, etNumeroCha, etNumeroMotor, etNumeroAsi,etAnio,etCapacidadAsi,etPrecio,etDescripcion;
     private ImageView imagen;
+
+    private static final int CAMERA_REQUEST_CODE = 100;
+    private static final int STORAGE_REQUEST_CODE = 101;
+    private static final int IMAGE_PICK_CAMERA_CODE = 102;
+    private static final int IMAGE_PICK_GALLERY_CODE = 103;
+    private String[] cameraPermissions;
+    private String[] storagePermissions;
+    private Uri imageUri;
+
+
+
     ArrayList<String>listMarcas;
     ArrayList<Instancias> instanciasList;
 
@@ -51,7 +73,6 @@ public class CrudAutomovil extends AppCompatActivity {
         etAnio=findViewById(R.id.etAnio);
         etCapacidadAsi=findViewById(R.id.etCapacidadAsi);
         etPrecio=findViewById(R.id.etPrecio);
-        etImagen=findViewById(R.id.etImagen);
         etDescripcion=findViewById(R.id.etDescripcion);
         comboMarcas=findViewById(R.id.LisMarcas);
         comboColores=findViewById(R.id.lisColor);
@@ -65,6 +86,116 @@ public class CrudAutomovil extends AppCompatActivity {
         ConsultarListaColor();
         ArrayAdapter<CharSequence> adapter2=new ArrayAdapter(this,R.layout.spinner_item,listColor);
         comboColores.setAdapter(adapter2);
+
+        cameraPermissions = new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        storagePermissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+        imagen.setOnClickListener((v) ->{
+            imagePickDialog();
+        });
+    }
+
+    private void imagePickDialog(){
+        String[] options = {"Camara","Galeria"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Seleccione imagen");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                if(which ==0){
+                    if(!checkCameraPermission()){
+                        requestCameraPermission();
+                    }
+                    else{
+                        PickFromCamera();
+                    }
+                }
+                else if(which ==1){
+                    if(!checkStoragePermission()){
+                        requestStoragePermission();
+                    }
+                    else{
+                        PickFromGallery();
+                    }
+                }
+            }
+        });
+
+        builder.create().show();
+    }
+
+    private void PickFromGallery(){
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK);
+        galleryIntent.setType("image/*");
+        startActivityForResult(galleryIntent, IMAGE_PICK_GALLERY_CODE);
+    }
+
+    private  void PickFromCamera(){
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.TITLE,"Titulo de la imagen");
+        values.put(MediaStore.Images.Media.DESCRIPTION,"Descripcion de la imagen");
+        imageUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,values);
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
+        startActivityForResult(cameraIntent,IMAGE_PICK_CAMERA_CODE);
+    }
+
+    private boolean checkStoragePermission(){
+        boolean result = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
+        return result;
+    }
+
+    private void requestStoragePermission(){
+        ActivityCompat.requestPermissions(this,storagePermissions,STORAGE_REQUEST_CODE);
+    }
+
+    private boolean checkCameraPermission(){
+        boolean result = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CAMERA) == (PackageManager.PERMISSION_GRANTED);
+        boolean result1 = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
+        return result && result1;
+    }
+
+    private void requestCameraPermission(){
+        ActivityCompat.requestPermissions(this,cameraPermissions,CAMERA_REQUEST_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode){
+            case CAMERA_REQUEST_CODE:{
+                if(grantResults.length>0){
+                    boolean cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    boolean storageAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+
+                    if(cameraAccepted && storageAccepted){
+                        PickFromCamera();
+                    }
+                    else{
+                        Toast.makeText(this, "Se requieren permisos de camara y almacenamiento",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            break;
+            case STORAGE_REQUEST_CODE:{
+                if(grantResults.length>0){
+                    boolean storageAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    if(storageAccepted){
+                        PickFromGallery();
+                    }
+                    else{
+                        Toast.makeText(this, "Se requieren permisos de almacenamiento",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            break;
+        }
     }
 
     private void ConsultarListaMarcas() {
@@ -139,7 +270,6 @@ public class CrudAutomovil extends AppCompatActivity {
     public void Ingresar(View v){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"CarsMotorsDB", null, 1);
         SQLiteDatabase bd= admin.getWritableDatabase();
-        Uri pathImag=getIntent().getData();
         String id = etIdAutomovil.getText().toString();
         String modelo=etModelo.getText().toString();
         String numero_vin=etNumeroVin.getText().toString();
@@ -149,6 +279,7 @@ public class CrudAutomovil extends AppCompatActivity {
         Integer anio=Integer.parseInt(etAnio.getText().toString());
         Integer capacidad_asientos=Integer.parseInt(etCapacidadAsi.getText().toString());
         Double precio=Double.parseDouble(etPrecio.getText().toString());
+        String URI_IMG = imageUri.toString();
         String descripcion=etDescripcion.getText().toString();
         Integer idmarcas=Integer.parseInt(String.valueOf(comboMarcas.getSelectedItemPosition()));
         Integer idtipoautomovil=Integer.parseInt(String.valueOf(comboTipos.getSelectedItemPosition()));
@@ -165,7 +296,7 @@ public class CrudAutomovil extends AppCompatActivity {
             registro.put("anio",anio);
             registro.put("capacidad_asientos",capacidad_asientos);
             registro.put("precio",precio);
-            registro.put("URI_IMG", String.valueOf(pathImag));
+            registro.put("URI_IMG", URI_IMG);
             registro.put("descripcion",descripcion);
             registro.put("idmarcas",idmarcas);
             registro.put("idtipoautomovil",idtipoautomovil);
@@ -180,16 +311,16 @@ public class CrudAutomovil extends AppCompatActivity {
             etAnio.setText("");
             etCapacidadAsi.setText("");
             etPrecio.setText("");
-            etImagen.setText("");
             etDescripcion.setText("");
             comboMarcas.setSelection(0);
             comboColores.setSelection(0);
             comboTipos.setSelection(0);
-            imagen.setImageDrawable(null);
+            imagen.setImageResource(R.drawable.subir);
             Toast.makeText(this,"Se ingreso el automovil", Toast.LENGTH_SHORT).show();
         }
         bd.close();
     }
+
     public void Buscar(View v){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"CarsMotorsDB", null, 1);
         SQLiteDatabase bd= admin.getWritableDatabase();
@@ -234,7 +365,7 @@ public class CrudAutomovil extends AppCompatActivity {
         Integer anio=Integer.parseInt(etAnio.getText().toString());
         Integer capacidad_asientos=Integer.parseInt(etCapacidadAsi.getText().toString());
         Double precio=Double.parseDouble(etPrecio.getText().toString());
-        String imagen=etImagen.getText().toString();
+        String URI_IMG = imageUri.toString();
         String descripcion=etDescripcion.getText().toString();
         Integer idmarcas=Integer.parseInt(String.valueOf(comboMarcas.getSelectedItemPosition()));
         Integer idtipoautomovil=Integer.parseInt(String.valueOf(comboTipos.getSelectedItemPosition()));
@@ -251,7 +382,7 @@ public class CrudAutomovil extends AppCompatActivity {
             registro.put("anio",anio);
             registro.put("capacidad_asientos",capacidad_asientos);
             registro.put("precio",precio);
-            registro.put("URI_IMG",imagen);
+            registro.put("URI_IMG",URI_IMG);
             registro.put("descripcion",descripcion);
             registro.put("idmarcas",idmarcas);
             registro.put("idtipoautomovil",idtipoautomovil);
@@ -269,11 +400,11 @@ public class CrudAutomovil extends AppCompatActivity {
                 etAnio.setText("");
                 etCapacidadAsi.setText("");
                 etPrecio.setText("");
-                etImagen.setText("");
                 etDescripcion.setText("");
                 comboMarcas.setSelection(0);
                 comboColores.setSelection(0);
                 comboTipos.setSelection(0);
+                imagen.setImageResource(R.drawable.subir);
             }
             else
                 Toast.makeText(this,"No existe un automovil con ese ID",Toast.LENGTH_SHORT).show();
@@ -299,11 +430,12 @@ public class CrudAutomovil extends AppCompatActivity {
             etAnio.setText("");
             etCapacidadAsi.setText("");
             etPrecio.setText("");
-            etImagen.setText("");
             etDescripcion.setText("");
             comboMarcas.setSelection(0);
             comboColores.setSelection(0);
             comboTipos.setSelection(0);
+            imagen.setImageResource(R.drawable.subir);
+
             if(cant==1){
                 Toast.makeText(this,"Se borró el automovil Correctamente",Toast.LENGTH_SHORT).show();
             }
@@ -313,33 +445,36 @@ public class CrudAutomovil extends AppCompatActivity {
         bd.close();
     }
 
-
-    public void CargarImagen(View view) {
-        cargarImagen();
-
-    }
-
-    private void cargarImagen() {
-        Intent intent=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        intent.setType("image/");
-        startActivityForResult(intent.createChooser(intent,"Selecione la aplicacion"),10);
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode==RESULT_OK){
-            Uri path=data.getData();
-            imagen.setImageURI(path);
 
-            try {
-                Object bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
-                imagen.setImageBitmap((Bitmap) bitmap);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+        if(resultCode == RESULT_OK){
+            if (requestCode == IMAGE_PICK_GALLERY_CODE){
+                CropImage.activity(data.getData())
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .setAspectRatio(1,1)
+                        .start(this);
+            }
+            else if(requestCode == IMAGE_PICK_CAMERA_CODE){
+                CropImage.activity(imageUri)
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .setAspectRatio(1,1)
+                        .start(this);
+            }
+            else if(requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                if(resultCode == RESULT_OK){
+                    Uri resultUri = result.getUri();
+                    imageUri = resultUri;
+                    imagen.setImageURI(resultUri);
+                }
+                else if(resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE){
+                    Exception error = result.getError();
+                    Toast.makeText(this, "" + error, Toast.LENGTH_SHORT).show();
+                }
             }
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
+
 }
