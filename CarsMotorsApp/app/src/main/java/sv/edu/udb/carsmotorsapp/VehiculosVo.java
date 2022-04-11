@@ -1,17 +1,17 @@
 package sv.edu.udb.carsmotorsapp;
 
 public class VehiculosVo {
-    private String Marca, Modelo, Anio, Color, Capacidad, Precio;
-    private int foto;
+    private String Marca, Modelo, Anio, Color, Capacidad, Precio, Foto;
 
-    public VehiculosVo(String marca, String modelo, String anio, String color, String capacidad, String precio, int foto) {
+
+    public VehiculosVo(String marca, String modelo, String anio, String color, String capacidad, String precio, String foto) {
         Marca = marca;
         Modelo = modelo;
         Anio = anio;
         Color = color;
         Capacidad = capacidad;
         Precio = precio;
-        this.foto = foto;
+        Foto = foto;
     }
 
     public String getMarca() {
@@ -62,11 +62,11 @@ public class VehiculosVo {
         Precio = precio;
     }
 
-    public int getFoto() {
-        return foto;
+    public String getFoto() {
+        return Foto;
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public void setFoto(String foto) {
+        Foto = foto;
     }
 }

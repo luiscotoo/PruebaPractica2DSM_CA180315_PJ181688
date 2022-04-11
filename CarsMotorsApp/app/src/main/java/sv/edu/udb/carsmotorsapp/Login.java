@@ -28,15 +28,16 @@ public class Login extends AppCompatActivity {
         SQLiteDatabase bd = admin.getWritableDatabase();
         String usuario = etUsuario.getText().toString();
         String contraseña = etContra.getText().toString();
-        Cursor fila = bd.rawQuery("select user,password,tipo from usuario where user='" + usuario + "'AND password='" + contraseña+"'", null);
+        Cursor fila = bd.rawQuery("select idusuario,user,password,tipo from usuario where user='" + usuario + "'AND password='" + contraseña+"'", null);
         if (fila.moveToFirst()) {
-            if(fila.getString(2).equals("admin")){
+            if(fila.getString(3).equals("admin")){
                 Intent intent = new Intent(this,MenuAdmin.class);
-                intent.putExtra("usuarioAdmin",fila.getString(0));
+                intent.putExtra("usuarioAdmin",fila.getString(1));
                 startActivity(intent);
             }else{
                 Intent intent = new Intent(this,MenuCliente.class);
-                intent.putExtra("usuarioCliente",fila.getString(0));
+                intent.putExtra("usuarioCliente",fila.getString(1));
+                intent.putExtra("idusuario",fila.getString(0));
                 startActivity(intent);
             }
 

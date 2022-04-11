@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#161A1D">
@@ -133,8 +134,10 @@
             android:layout_marginStart="332dp"
             android:layout_marginLeft="332dp"
             android:layout_marginTop="28dp"
+            android:onClick="AgregarFavorito"
             android:scaleType="centerCrop"
-            android:src="@drawable/fav" />
+            android:src="@drawable/fav"
+            tools:ignore="SpeakableTextPresentCheck" />
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"

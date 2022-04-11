@@ -1,6 +1,7 @@
 package sv.edu.udb.carsmotorsapp;
 
 import android.icu.text.RelativeDateTimeFormatter;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +13,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDatos> {
+public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDatos>
+implements View.OnClickListener{
 
     ArrayList<VehiculosVo> listvehiculos;
+    private View.OnClickListener listener;
 
     public AdapterDatos(ArrayList<VehiculosVo> listvehiculos) {
         this.listvehiculos = listvehiculos;
     }
 
+
     @NonNull
     @Override
     public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_layout,null,false);
+        view.setOnClickListener(this);
         return new ViewHolderDatos(view);
     }
 
@@ -35,13 +40,25 @@ public class AdapterDatos extends RecyclerView.Adapter<AdapterDatos.ViewHolderDa
         holder.tvColor.setText(listvehiculos.get(position).getColor());
         holder.tvCapacidad.setText(listvehiculos.get(position).getCapacidad());
         holder.tvPrecio.setText(listvehiculos.get(position).getPrecio());
-        holder.Imagen.setImageResource(listvehiculos.get(position).getFoto());
+        holder.Imagen.setImageURI(Uri.parse(listvehiculos.get(position).getFoto()));
 
     }
 
     @Override
     public int getItemCount() {
         return listvehiculos.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(listener != null){
+            listener.onClick(view);
+        }
+
     }
 
     public class ViewHolderDatos extends RecyclerView.ViewHolder {

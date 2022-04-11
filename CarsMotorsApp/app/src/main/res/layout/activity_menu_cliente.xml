@@ -33,6 +33,7 @@
         android:layout_marginEnd="160dp"
         android:background="@drawable/ovalbutton"
         android:backgroundTint="#660708"
+        android:onClick="Favoritos"
         android:text="Mis Favoritos"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
