@@ -1,22 +1,31 @@
 package sv.edu.udb.carsmotorsapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class CrudAutomovil extends AppCompatActivity {
     private Spinner comboMarcas, comboColores, comboTipos;
     private EditText etIdAutomovil,etModelo, etNumeroVin, etNumeroCha, etNumeroMotor, etNumeroAsi,etAnio,etCapacidadAsi,etPrecio,etImagen,etDescripcion;
+    private ImageView imagen;
     ArrayList<String>listMarcas;
     ArrayList<Instancias> instanciasList;
 
@@ -32,6 +41,7 @@ public class CrudAutomovil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_automovil);
+        imagen=findViewById(R.id.IdImagen);
         etIdAutomovil=findViewById(R.id.etIdAutomovil);
         etModelo=findViewById(R.id.etModelo);
         etNumeroVin=findViewById(R.id.etNumeroVin);
@@ -129,6 +139,7 @@ public class CrudAutomovil extends AppCompatActivity {
     public void Ingresar(View v){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"CarsMotorsDB", null, 1);
         SQLiteDatabase bd= admin.getWritableDatabase();
+        Uri pathImag=getIntent().getData();
         String id = etIdAutomovil.getText().toString();
         String modelo=etModelo.getText().toString();
         String numero_vin=etNumeroVin.getText().toString();
@@ -138,7 +149,6 @@ public class CrudAutomovil extends AppCompatActivity {
         Integer anio=Integer.parseInt(etAnio.getText().toString());
         Integer capacidad_asientos=Integer.parseInt(etCapacidadAsi.getText().toString());
         Double precio=Double.parseDouble(etPrecio.getText().toString());
-        String imagen=etImagen.getText().toString();
         String descripcion=etDescripcion.getText().toString();
         Integer idmarcas=Integer.parseInt(String.valueOf(comboMarcas.getSelectedItemPosition()));
         Integer idtipoautomovil=Integer.parseInt(String.valueOf(comboTipos.getSelectedItemPosition()));
@@ -155,7 +165,7 @@ public class CrudAutomovil extends AppCompatActivity {
             registro.put("anio",anio);
             registro.put("capacidad_asientos",capacidad_asientos);
             registro.put("precio",precio);
-            registro.put("URI_IMG",imagen);
+            registro.put("URI_IMG", String.valueOf(pathImag));
             registro.put("descripcion",descripcion);
             registro.put("idmarcas",idmarcas);
             registro.put("idtipoautomovil",idtipoautomovil);
@@ -175,6 +185,7 @@ public class CrudAutomovil extends AppCompatActivity {
             comboMarcas.setSelection(0);
             comboColores.setSelection(0);
             comboTipos.setSelection(0);
+            imagen.setImageDrawable(null);
             Toast.makeText(this,"Se ingreso el automovil", Toast.LENGTH_SHORT).show();
         }
         bd.close();
@@ -188,6 +199,7 @@ public class CrudAutomovil extends AppCompatActivity {
         }else{
             Cursor fila=bd.rawQuery("select idautomovil, modelo, numero_vin, numero_chasis, numero_motor, numero_asientos, anio, capacidad_asientos, precio, URI_IMG, descripcion,idmarcas,idtipoautomovil,idcolores from automovil where modelo='"+modelo+"'",null);
             if (fila.moveToFirst()){
+
                 etIdAutomovil.setText(fila.getString(0));
                 etModelo.setText(fila.getString(1));
                 etNumeroVin.setText(fila.getString(2));
@@ -197,7 +209,7 @@ public class CrudAutomovil extends AppCompatActivity {
                 etAnio.setText(fila.getString(6));
                 etCapacidadAsi.setText(fila.getString(7));
                 etPrecio.setText(fila.getString(8));
-                etImagen.setText(fila.getString(9));
+                imagen.setImageURI(Uri.parse(fila.getString(9)));
                 etDescripcion.setText(fila.getString(10));
                 comboMarcas.setSelection(Integer.valueOf(fila.getString(11)));
                 comboTipos.setSelection(Integer.valueOf(fila.getString(12)));
@@ -302,4 +314,32 @@ public class CrudAutomovil extends AppCompatActivity {
     }
 
 
+    public void CargarImagen(View view) {
+        cargarImagen();
+
     }
+
+    private void cargarImagen() {
+        Intent intent=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/");
+        startActivityForResult(intent.createChooser(intent,"Selecione la aplicacion"),10);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK){
+            Uri path=data.getData();
+            imagen.setImageURI(path);
+
+            try {
+                Object bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
+                imagen.setImageBitmap((Bitmap) bitmap);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
