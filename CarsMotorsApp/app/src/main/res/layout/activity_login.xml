@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161A1D"
     tools:context=".Login">
 
     <TextView
@@ -11,11 +12,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
-        android:layout_marginTop="138dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="177dp"
-        android:text="Bienvenido a Cars Motors"
+        android:fontFamily="serif"
+        android:shadowColor="#E5383B"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="10"
+        android:text="Cars Motors"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,6 +37,9 @@
         android:layout_marginEnd="101dp"
         android:ems="10"
         android:hint="Usuario"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,6 +54,9 @@
         android:layout_marginTop="23dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:minHeight="48dp"
@@ -49,7 +64,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUsuario" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnIngresar"
         android:layout_width="214dp"
         android:layout_height="49dp"
@@ -58,11 +73,14 @@
         android:layout_marginEnd="159dp"
         android:onClick="ingresar"
         android:text="Ingresar"
+        android:textColor="@color/white"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etContra" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegistrarseLogin"
         android:layout_width="214dp"
         android:layout_height="0dp"
@@ -71,12 +89,15 @@
         android:layout_marginEnd="159dp"
         android:onClick="IrRegistrarse"
         android:text="Registrarse"
+        android:backgroundTint="#660708"
+        android:textColor="@color/white"
+        android:background="@drawable/ovalbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSalir"
         android:layout_width="214dp"
         android:layout_height="50dp"
@@ -85,6 +106,9 @@
         android:layout_marginEnd="158dp"
         android:onClick="salir"
         android:text="Salir"
+        android:textColor="@color/white"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#8eb1c7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"

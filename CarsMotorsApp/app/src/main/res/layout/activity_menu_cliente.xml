@@ -4,43 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161A1D"
     tools:context=".MenuCliente">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAutos"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="157dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="160dp"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Vehiculos"
-        android:text="Ver Vehiculos"
+        android:text="Todos los vehiculos"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFav"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="157dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="144dp"
         android:layout_marginEnd="160dp"
-        android:text="Ver Vehiculos Favoritos"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#660708"
+        android:text="Mis Favoritos"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/tvUsuarioCliente"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="149dp"
-        android:text="Sesión iniciada en "
+        android:layout_height="39dp"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="148dp"
+        android:drawableTint="@color/white"
+        android:text="Bienvenido"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,20 +61,26 @@
         android:layout_marginStart="166dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="167dp"
-        android:text="Automoviles"
+        android:text="¿Qué deseas visualizar?"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUsuarioCliente" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="157dp"
-        android:layout_marginTop="406dp"
+        android:layout_marginTop="352dp"
         android:layout_marginEnd="160dp"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#8eb1c7"
         android:onClick="salir"
         android:text="Salir"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />

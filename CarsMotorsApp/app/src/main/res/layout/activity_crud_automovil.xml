@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161A1D"
     tools:context=".CrudAutomovil">
 
     <ScrollView
@@ -23,7 +24,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="216dp" />
+                android:layout_marginTop="216dp"
+                android:textColor="#FFFFFF"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <Spinner
                 android:id="@+id/lisTipo"
@@ -34,12 +37,14 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
+                android:textColor="#FFFFFF"
                 android:layout_marginTop="175dp" />
 
             <Spinner
                 android:id="@+id/LisMarcas"
                 android:layout_width="381dp"
                 android:layout_height="33dp"
+                android:textColor="#FFFFFF"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -60,8 +65,8 @@
         android:ems="10"
         android:text="CRUD Automovil"
         android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#14213D"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+                android:textColor="#FFFFFF"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -78,7 +83,9 @@
                 android:ems="10"
                 android:hint="Ingrese El modelo"
                 android:inputType="text"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -94,7 +101,9 @@
                 android:ems="10"
                 android:hint="ID"
                 android:inputType="text"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -110,7 +119,9 @@
                 android:ems="10"
                 android:hint="Ingrese El numero VIN"
                 android:inputType="text"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -126,7 +137,9 @@
                 android:ems="10"
                 android:hint="Año del vehiculo"
                 android:inputType="number"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -142,7 +155,9 @@
                 android:ems="10"
                 android:hint="Ingrese Precio"
                 android:inputType="numberDecimal"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -158,7 +173,9 @@
                 android:ems="10"
                 android:hint="Ingrese Descripcion"
                 android:inputType="text"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -174,7 +191,9 @@
                 android:ems="10"
                 android:hint="Capacidad Asiento"
                 android:inputType="text"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -190,7 +209,9 @@
                 android:ems="10"
                 android:hint="Imagen"
                 android:inputType="text"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -206,7 +227,9 @@
                 android:ems="10"
                 android:hint="Ingrese El numero del motor"
                 android:inputType="text"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -222,7 +245,9 @@
                 android:ems="10"
                 android:hint="Ingrese El numero de asiento"
                 android:inputType="number"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <EditText
@@ -238,10 +263,12 @@
                 android:ems="10"
                 android:hint="Ingrese El numero del Chasis"
                 android:inputType="text"
-                android:textColor="#14213D"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnIngresarV"
                 android:layout_width="298dp"
                 android:layout_height="wrap_content"
@@ -251,13 +278,14 @@
                 android:layout_marginStart="51dp"
                 android:layout_marginLeft="51dp"
                 android:layout_marginTop="743dp"
-                android:backgroundTint="#3D3014"
+                android:background="@drawable/ovalbutton"
+                android:backgroundTint="#BA181B"
                 android:onClick="Ingresar"
                 android:text="Ingresar Vehiculo"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnBuscarv"
                 android:layout_width="298dp"
                 android:layout_height="wrap_content"
@@ -267,12 +295,13 @@
                 android:layout_marginStart="51dp"
                 android:layout_marginLeft="51dp"
                 android:layout_marginTop="800dp"
-                android:backgroundTint="#3D3014"
+                android:background="@drawable/ovalbutton"
+                android:backgroundTint="#BA181B"
                 android:onClick="Buscar"
                 android:text="Buscar Vehiculos"
                 android:textColor="#FFFFFF" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnBorrarV"
                 android:layout_width="298dp"
                 android:layout_height="wrap_content"
@@ -281,13 +310,14 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="51dp"
                 android:layout_marginLeft="51dp"
-                android:layout_marginTop="900dp"
-                android:backgroundTint="#3D3014"
+                android:layout_marginTop="920dp"
+                android:background="@drawable/ovalbutton"
+                android:backgroundTint="#8eb1c7"
                 android:onClick="Borrar"
                 android:text="Eliminar Vehiculo"
                 android:textColor="#FFFFFF" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnActualizarV"
                 android:layout_width="298dp"
                 android:layout_height="wrap_content"
@@ -296,8 +326,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="51dp"
                 android:layout_marginLeft="51dp"
-                android:layout_marginTop="850dp"
-                android:backgroundTint="#3D3014"
+                android:layout_marginTop="860dp"
+                android:background="@drawable/ovalbutton"
+                android:backgroundTint="#BA181B"
                 android:onClick="Actualizar"
                 android:text="Actualizar Vehiculo"
                 android:textColor="#FFFFFF" />

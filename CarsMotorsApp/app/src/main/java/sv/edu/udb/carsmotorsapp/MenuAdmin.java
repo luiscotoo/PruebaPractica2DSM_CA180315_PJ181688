@@ -18,7 +18,7 @@ public class MenuAdmin extends AppCompatActivity {
 
         tvUsuarioAdmin = (TextView) findViewById(R.id.tvUsuarioAdmin);
         Bundle extras = getIntent().getExtras();
-        tvUsuarioAdmin.setText("Sesión iniciada en " + extras.getString("usuarioAdmin"));
+        tvUsuarioAdmin.setText("Bienvenido " + extras.getString("usuarioAdmin"));
     }
     public void salir(View v){
         finish();

@@ -7,7 +7,7 @@
         <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crub_colores.xml" value="0.209375" />
         <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crub_marcas.xml" value="0.1" />
         <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crub_tipo_auto.xml" value="0.209375" />
-        <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_automovil.xml" value="0.25" />
+        <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_automovil.xml" value="0.18" />
         <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_marcas.xml" value="0.20742753623188406" />
         <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_tipo_auto.xml" value="0.209375" />
         <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_usarios.xml" value="0.25" />
@@ -18,12 +18,20 @@
         <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_menu_cliente.xml" value="0.25" />
         <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_vista_vehiculos.xml" value="0.25" />
         <entry key="..\:/Users/LIRITA RD/Desktop/2022/Clases/Desarollo de Software APP/Lab/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/list_layout.xml" value="0.41875" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/drawable/ovalbutton.xml" value="0.2796296296296296" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_automovil.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_colores.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_marcas.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_tipo_auto.xml" value="0.5" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_crud_usuarios.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_menu_admin.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_menu_cliente.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_registrarse.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/activity_vista_vehiculos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/list_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/luisc/OneDrive/Documentos/GitHub/PruebaPractica2DSM_CA180315_PJ181688/CarsMotorsApp/app/src/main/res/layout/spinner_item.xml" value="0.17831813576494426" />
       </map>
     </option>
   </component>

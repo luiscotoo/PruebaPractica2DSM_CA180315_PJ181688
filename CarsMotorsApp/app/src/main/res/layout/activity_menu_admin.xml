@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161A1D"
     tools:context=".MenuAdmin">
 
     <TextView
@@ -11,9 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="111dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="112dp"
-        android:text="Menu del modo administrador"
+        android:text="Menú Administrador"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUsuarioAdmin" />
@@ -21,90 +24,110 @@
     <TextView
         android:id="@+id/tvUsuarioAdmin"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="39dp"
         android:layout_marginStart="147dp"
         android:layout_marginTop="51dp"
         android:layout_marginEnd="148dp"
-        android:text="Sesión iniciada en:"
+        android:drawableTint="@color/white"
+        android:text="Bienvenido"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button3"
-        android:layout_width="157dp"
+        android:layout_width="284dp"
         android:layout_height="49dp"
         android:layout_marginStart="134dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="134dp"
-        android:text="CRUD MARCAS"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="CrudMarcas"
+        android:text="CRUD MARCAS"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button5"
-        android:layout_width="165dp"
+        android:layout_width="284dp"
         android:layout_height="50dp"
         android:layout_marginStart="134dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="129dp"
-        android:text="CRUD COLORES"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="CrudColores"
+        android:text="CRUD COLORES"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button6"
-        android:layout_width="wrap_content"
+        android:layout_width="284dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="125dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="125dp"
-        android:text="CRUD TIPO AUTO"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="CrudTipoAuto"
+        android:text="CRUD TIPO AUTO"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button7"
-        android:layout_width="159dp"
-        android:layout_height="50dp"
+        android:layout_width="284dp"
+        android:layout_height="48dp"
         android:layout_marginStart="145dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="146dp"
-        android:text="CRUD AUTO"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="CrudAutomovil"
+        android:text="CRUD AUTO"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button8"
-        android:layout_width="159dp"
-        android:layout_height="48dp"
+        android:layout_width="284dp"
+        android:layout_height="49dp"
         android:layout_marginStart="134dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="134dp"
-        android:text="CRUD USUARIO"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="CrudUsuarios"
+        android:text="CRUD USUARIO"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button7" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button9"
-        android:layout_width="154dp"
+        android:layout_width="284dp"
         android:layout_height="48dp"
         android:layout_marginStart="134dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="134dp"
-        android:backgroundTint="#E42828"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#8eb1c7"
         android:onClick="salir"
         android:text="SALIR"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button8" />
