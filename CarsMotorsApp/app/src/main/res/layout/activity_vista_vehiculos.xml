@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161A1D"
     tools:context=".VistaVehiculos">
 
 
@@ -19,8 +20,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:text="VEHICULOS"
+        android:textColor="@color/white"
         android:textAlignment="center"
-        android:textColor="#14213D"
         android:textSize="20dp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="61dp"
@@ -33,6 +34,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
 
+        android:textColor="@color/white"
         tools:ignore="MissingConstraints"></androidx.recyclerview.widget.RecyclerView>
 
 

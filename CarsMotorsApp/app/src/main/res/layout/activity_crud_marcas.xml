@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fontFamily="sans-serif"
-    android:background="#FFFFFF"
+    android:background="#161A1D"
     tools:context=".CrudMarcas">
 
     <TextView
         android:id="@+id/Marca"
         android:layout_width="289dp"
         android:layout_height="33dp"
+        android:textColor="#FFFFFF"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -22,7 +23,6 @@
         android:text="CRUD MARCAS"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#14213D"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -40,7 +40,9 @@
         android:ems="10"
         android:hint="Nombre"
         android:inputType="text"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
@@ -56,10 +58,12 @@
         android:ems="10"
         android:hint="ID (Sólo para actualizar)"
         android:inputType="text"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnIngresarM"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -69,13 +73,15 @@
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="310dp"
-        android:backgroundTint="#3D3014"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Ingresar"
         android:text="Registrar Marca"
         android:textAlignment="center"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBuscarM"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -84,38 +90,43 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="57dp"
         android:layout_marginLeft="57dp"
-        android:layout_marginTop="365dp"
-        android:backgroundTint="#3D3014"
+        android:layout_marginTop="375dp"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Buscar"
         android:text="Buscar Marcas"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnActualizarM"
         android:layout_width="298dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="421dp"
-        android:backgroundTint="#3D3014"
+        android:layout_marginStart="58dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="435dp"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Actualizar"
         android:text="Actualizar Marca por ID"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBorrarM"
         android:layout_width="298dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
-        android:layout_marginTop="477dp"
-        android:backgroundTint="#3D3014"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#8eb1c7"
         android:onClick="Borrar"
         android:text="Eliminar Marca"
         android:textColor="#FFFFFF" />

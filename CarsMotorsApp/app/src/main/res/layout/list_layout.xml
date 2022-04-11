@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#161A1D">
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#161A1D">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:layout_marginTop="2dp">
+        android:layout_marginTop="2dp"
+        android:background="#161A1D">
 
         <ImageView
             android:id="@+id/IdImag"
@@ -35,6 +38,7 @@
             android:layout_marginLeft="207dp"
             android:layout_marginTop="65dp"
             android:ems="10"
+            android:textColor="#FFFFFF"
             android:text="color"
             android:textSize="15dp"
             android:textStyle="bold" />
@@ -50,6 +54,7 @@
             android:layout_marginLeft="206dp"
             android:layout_marginTop="3dp"
             android:ems="10"
+            android:textColor="#FFFFFF"
             android:text="Marca"
             android:textSize="15dp"
             android:textStyle="bold" />
@@ -65,6 +70,7 @@
             android:layout_marginLeft="207dp"
             android:layout_marginTop="25dp"
             android:ems="10"
+            android:textColor="#FFFFFF"
             android:text="Modelo"
             android:textSize="15dp"
             android:textStyle="bold" />
@@ -81,6 +87,7 @@
             android:layout_marginTop="46dp"
             android:ems="10"
             android:text="Año"
+            android:textColor="#FFFFFF"
             android:textSize="15dp"
             android:textStyle="bold" />
 
@@ -95,6 +102,7 @@
             android:layout_marginLeft="206dp"
             android:layout_marginTop="103dp"
             android:ems="10"
+            android:textColor="#FFFFFF"
             android:text="Precio"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -110,6 +118,7 @@
             android:layout_marginLeft="207dp"
             android:layout_marginTop="85dp"
             android:ems="10"
+            android:textColor="#FFFFFF"
             android:text="Capacidad Asientos"
             android:textSize="15dp"
             android:textStyle="bold" />
@@ -130,6 +139,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:textColor="#FFFFFF"
         android:background="#05156E"
         android:layout_marginTop="130dp"/>
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161A1D"
     tools:context=".CrudTipoAuto">
 
     <TextView
@@ -17,10 +18,10 @@
         android:layout_marginLeft="61dp"
         android:layout_marginTop="49dp"
         android:ems="10"
+        android:textColor="#FFFFFF"
         android:text="CRUD Tipo de Autos"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#14213D"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -38,7 +39,9 @@
         android:ems="10"
         android:hint="Nombre"
         android:inputType="text"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
@@ -54,10 +57,12 @@
         android:ems="10"
         android:hint="ID"
         android:inputType="text"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnIngresarT"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -67,13 +72,14 @@
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="310dp"
-        android:backgroundTint="#3D3014"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Ingresar"
         android:text="Registrar Tipo de Auto"
         android:textAlignment="center"
         android:textColor="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBuscarT"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -82,13 +88,14 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="57dp"
         android:layout_marginLeft="57dp"
-        android:layout_marginTop="365dp"
-        android:backgroundTint="#3D3014"
+        android:layout_marginTop="370dp"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Buscar"
         android:text="Buscar tipo de Auto"
         android:textColor="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnActualizarT"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -97,13 +104,14 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
-        android:layout_marginTop="421dp"
-        android:backgroundTint="#3D3014"
+        android:layout_marginTop="426dp"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Actualizar"
         android:text="Actualizar tipo por ID"
         android:textColor="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBorrarT"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -112,8 +120,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
-        android:layout_marginTop="477dp"
-        android:backgroundTint="#3D3014"
+        android:layout_marginTop="482dp"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#8eb1c7"
         android:onClick="Borrar"
         android:text="Eliminar Tipo de Auto"
         android:textColor="#FFFFFF" />

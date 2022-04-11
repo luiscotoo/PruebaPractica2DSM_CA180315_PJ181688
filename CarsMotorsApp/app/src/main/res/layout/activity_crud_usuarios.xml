@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161A1D"
     tools:context=".CrudUsuarios">
 
 
@@ -20,9 +21,9 @@
         android:layout_marginTop="18dp"
         android:ems="10"
         android:text="CRUD Usuarios"
+        android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#14213D"
         android:textSize="20dp"
         android:textStyle="bold" />
 
@@ -39,7 +40,9 @@
         android:ems="10"
         android:hint="Nombre"
         android:inputType="text"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
@@ -55,7 +58,9 @@
         android:ems="10"
         android:hint="ID"
         android:inputType="text"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
@@ -71,7 +76,9 @@
         android:ems="10"
         android:hint="Apellido"
         android:inputType="text"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
@@ -87,7 +94,9 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
 
@@ -104,7 +113,9 @@
         android:ems="10"
         android:hint="Usuario"
         android:inputType="text"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
@@ -120,7 +131,9 @@
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
@@ -136,10 +149,12 @@
         android:ems="10"
         android:hint="Tipo"
         android:inputType="text"
-        android:textColor="#14213D"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnIngresarV"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -149,13 +164,14 @@
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="423dp"
-        android:backgroundTint="#3D3014"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Ingresar"
         android:text="Ingresar Usuario"
         android:textAlignment="center"
         android:textColor="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBuscarv"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -165,12 +181,13 @@
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="478dp"
-        android:backgroundTint="#3D3014"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Buscar"
         android:text="Buscar Usuarios"
         android:textColor="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBorrarV"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -180,12 +197,13 @@
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="590dp"
-        android:backgroundTint="#3D3014"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#8eb1c7"
         android:onClick="Borrar"
         android:text="Eliminar Usuario"
         android:textColor="#FFFFFF" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnActualizarV"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
@@ -195,7 +213,8 @@
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="534dp"
-        android:backgroundTint="#3D3014"
+        android:background="@drawable/ovalbutton"
+        android:backgroundTint="#BA181B"
         android:onClick="Actualizar"
         android:text="Actualizar Usuario por ID"
         android:textColor="#FFFFFF" />
