@@ -2,9 +2,18 @@ package sv.edu.udb.carsmotorsapp;
 
 public class VehiculosVo {
     private String Marca, Modelo, Anio, Color, Capacidad, Precio, Foto;
+    private Integer Id;
 
+    public Integer getId() {
+        return Id;
+    }
 
-    public VehiculosVo(String marca, String modelo, String anio, String color, String capacidad, String precio, String foto) {
+    public void setId(Integer id) {
+        Id = id;
+    }
+
+    public VehiculosVo(String marca, String modelo, String anio, String color, String capacidad, String precio, String foto, Integer id) {
+        Id = id;
         Marca = marca;
         Modelo = modelo;
         Anio = anio;

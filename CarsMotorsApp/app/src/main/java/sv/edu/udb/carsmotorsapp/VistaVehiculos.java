@@ -41,7 +41,8 @@ public class VistaVehiculos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SQLiteDatabase bd= admin.getWritableDatabase();
-                String idfavoritoautomovil = listvehiculos.get(recycleVehiculo.getChildAdapterPosition(view)).getModelo();
+                //String idfavoritoautomovil = listvehiculos.get(recycleVehiculo.getChildAdapterPosition(view)).getModelo();
+                Integer idfavoritoautomovil = listvehiculos.get(recycleVehiculo.getChildAdapterPosition(view)).getId();
                 String fecha_agregado = "hoy";
                 ContentValues registro=new ContentValues();
                 registro.put("idusuario",idusuario);
@@ -58,9 +59,9 @@ public class VistaVehiculos extends AppCompatActivity {
     private void llenarvehiculos(){
         SQLiteDatabase bd= admin.getWritableDatabase();
         VehiculosVo vehiculosVo = null;
-        Cursor fila=bd.rawQuery("SELECT marcas.nombre,modelo,anio,colores.descripcion,capacidad_asientos,precio,URI_IMG from automovil INNER JOIN marcas on marcas.idmarcas = automovil.idmarcas INNER JOIN colores on colores.idcolores = automovil.idcolores",null);
+        Cursor fila=bd.rawQuery("SELECT marcas.nombre,modelo,anio,colores.descripcion,capacidad_asientos,precio,URI_IMG,idautomovil from automovil INNER JOIN marcas on marcas.idmarcas = automovil.idmarcas INNER JOIN colores on colores.idcolores = automovil.idcolores",null);
         while(fila.moveToNext()){
-            listvehiculos.add(new VehiculosVo("Marca: "+fila.getString(0),"Modelo: "+fila.getString(1),"Año: "+fila.getString(2),"Color: "+fila.getString(3),"Capacidad: "+fila.getString(4),"Precio: "+fila.getString(5), fila.getString(6)));
+            listvehiculos.add(new VehiculosVo("Marca: "+fila.getString(0),"Modelo: "+fila.getString(1),"Año: "+fila.getString(2),"Color: "+fila.getString(3),"Capacidad: "+fila.getString(4),"Precio: "+fila.getString(5), fila.getString(6),+fila.getInt(7)));
         }
     }
 
