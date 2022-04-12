@@ -23,28 +23,38 @@ public class Login extends AppCompatActivity {
         etContra = (EditText) findViewById(R.id.etContra);
     }
 
-    public void ingresar(View v){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"CarsMotorsDB", null, 1);
+    public void ingresar(View v) {
+
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "CarsMotorsDB", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
         String usuario = etUsuario.getText().toString();
         String contraseña = etContra.getText().toString();
-        Cursor fila = bd.rawQuery("select idusuario,user,password,tipo from usuario where user='" + usuario + "'AND password='" + contraseña+"'", null);
-        if (fila.moveToFirst()) {
-            if(fila.getString(3).equals("admin")){
-                Intent intent = new Intent(this,MenuAdmin.class);
-                intent.putExtra("usuarioAdmin",fila.getString(1));
-                startActivity(intent);
-            }else{
-                Intent intent = new Intent(this,MenuCliente.class);
-                intent.putExtra("usuarioCliente",fila.getString(1));
-                intent.putExtra("idusuario",fila.getString(0));
-                startActivity(intent);
+        if (usuario.isEmpty() || contraseña.isEmpty()) {
+            if (usuario.isEmpty()) {
+                etUsuario.setError("Ingrese Usuario");
             }
+            if (contraseña.isEmpty()) {
+                etContra.setError("Ingrese Contraseña");
+            }
+        } else {
+            Cursor fila = bd.rawQuery("select idusuario,user,password,tipo from usuario where user='" + usuario + "'AND password='" + contraseña + "'", null);
+            if (fila.moveToFirst()) {
+                if (fila.getString(3).equals("admin")) {
+                    Intent intent = new Intent(this, MenuAdmin.class);
+                    intent.putExtra("usuarioAdmin", fila.getString(1));
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(this, MenuCliente.class);
+                    intent.putExtra("usuarioCliente", fila.getString(1));
+                    intent.putExtra("idusuario", fila.getString(0));
+                    startActivity(intent);
+                }
 
-        } else
-            Toast.makeText(this, "Datos de ingreso erróneos. Verifique los datos.",
-                    Toast.LENGTH_SHORT).show();
-        bd.close();
+            } else
+                Toast.makeText(this, "Datos de ingreso erróneos. Verifique los datos.",
+                        Toast.LENGTH_SHORT).show();
+            bd.close();
+        }
     }
 
     public void IrRegistrarse(View v){
