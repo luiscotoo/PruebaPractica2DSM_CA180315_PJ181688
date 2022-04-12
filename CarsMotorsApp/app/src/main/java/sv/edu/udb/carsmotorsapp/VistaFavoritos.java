@@ -30,7 +30,7 @@ public class VistaFavoritos extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         user = extras.getString("user");
         VehiculosFavoritos = (TextView) findViewById(R.id.VehiculosFavoritos);
-        VehiculosFavoritos.setText("Vehiculos Favoritos - "+user);
+        VehiculosFavoritos.setText("Favoritos - "+user);
         idusuario = extras.getString("idusuario");
         admin = new AdminSQLiteOpenHelper(this,"CarsMotorsDB", null, 1);
 
