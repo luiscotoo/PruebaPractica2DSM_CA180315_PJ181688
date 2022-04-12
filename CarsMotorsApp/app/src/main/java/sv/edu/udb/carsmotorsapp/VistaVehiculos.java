@@ -41,7 +41,6 @@ public class VistaVehiculos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SQLiteDatabase bd= admin.getWritableDatabase();
-                //String idfavoritoautomovil = listvehiculos.get(recycleVehiculo.getChildAdapterPosition(view)).getModelo();
                 Integer idfavoritoautomovil = listvehiculos.get(recycleVehiculo.getChildAdapterPosition(view)).getId();
                 String fecha_agregado = "hoy";
                 ContentValues registro=new ContentValues();
@@ -65,16 +64,7 @@ public class VistaVehiculos extends AppCompatActivity {
         }
     }
 
-    public void AgregarFavorito(View v){
-        SQLiteDatabase bd= admin.getWritableDatabase();
-        String idfavoritoautomovil = "1";
-        String fecha_agregado = "hoy";
-        ContentValues registro=new ContentValues();
-        registro.put("idusuario",idusuario);
-        registro.put("idfavoritoautomovil",idfavoritoautomovil);
-        registro.put("fecha_agregado",fecha_agregado);
-        bd.insert("favoritos_automovil",null,registro);
-        Toast.makeText(this,"Se agrego a favoritos", Toast.LENGTH_SHORT).show();
-        bd.close();
+    public void QuitarFavorito(View v){
+
     }
 }

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -30,7 +31,6 @@ public class VistaFavoritos extends AppCompatActivity {
         recycleVehiculo=findViewById(R.id.recyclerFavoritos);
         recycleVehiculo.setLayoutManager(new LinearLayoutManager(this));
         llenarvehiculos();
-
         AdapterDatos adapter=new AdapterDatos(listvehiculos);
         recycleVehiculo.setAdapter(adapter);
     }
@@ -43,8 +43,10 @@ public class VistaFavoritos extends AppCompatActivity {
             listvehiculos.add(new VehiculosVo("Marca: "+fila.getString(0),"Modelo: "+fila.getString(1),"Año: "+fila.getString(2),"Color: "+fila.getString(3),"Capacidad: "+fila.getString(4),"Precio: "+fila.getString(5), fila.getString(6),fila.getInt(7)));
         }
 
+    }
 
-
+    public void QuitarFavorito(View v){
+       //Aca deberia ir el codigo para quitarlo sin tener que crear otra recyclerview
     }
 
 }
