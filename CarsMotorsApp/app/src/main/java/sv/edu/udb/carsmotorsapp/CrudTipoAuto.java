@@ -8,17 +8,23 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CrudTipoAuto extends AppCompatActivity {
 
     private EditText etTipoAuto, etIdTipo;
+    String user;
+    private TextView TipoA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_tipo_auto);
-
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("user");
+        TipoA = (TextView) findViewById(R.id.tipoA);
+        TipoA.setText("CRUD Tipo de Auto - "+user);
         etIdTipo = (EditText) findViewById(R.id.etIdTipo);
         etTipoAuto = (EditText) findViewById(R.id.etTipoAuto);
     }

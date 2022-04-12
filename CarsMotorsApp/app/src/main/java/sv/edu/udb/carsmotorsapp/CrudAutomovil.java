@@ -24,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.theartofdev.edmodo.cropper.CropImage;
@@ -37,6 +38,7 @@ public class CrudAutomovil extends AppCompatActivity {
     private Spinner comboMarcas, comboColores, comboTipos;
     private EditText etIdAutomovil,etModelo, etNumeroVin, etNumeroCha, etNumeroMotor, etNumeroAsi,etAnio,etCapacidadAsi,etPrecio,etDescripcion;
     private ImageView imagen;
+    private TextView Automotivl;
 
     private static final int CAMERA_REQUEST_CODE = 100;
     private static final int STORAGE_REQUEST_CODE = 101;
@@ -46,7 +48,7 @@ public class CrudAutomovil extends AppCompatActivity {
     private String[] storagePermissions;
     private Uri imageUri;
 
-
+    String user;
 
     ArrayList<String>listMarcas;
     ArrayList<Instancias> instanciasList;
@@ -59,10 +61,17 @@ public class CrudAutomovil extends AppCompatActivity {
 
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_automovil);
+
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("user");
+        Automotivl = (TextView) findViewById(R.id.Automotivl);
+        Automotivl.setText("CRUD Automovil - "+user);
         imagen=findViewById(R.id.IdImagen);
         etIdAutomovil=findViewById(R.id.etIdAutomovil);
         etModelo=findViewById(R.id.etModelo);

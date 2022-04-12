@@ -31,12 +31,14 @@ public class MenuCliente extends AppCompatActivity {
     public void Vehiculos(View v){
         Intent llamar = new Intent(this, VistaVehiculos.class);
         llamar.putExtra("idusuario",idusuario);
+        llamar.putExtra("user",user);
         startActivity(llamar);
     }
 
     public void Favoritos(View v){
         Intent llamar = new Intent(this, VistaFavoritos.class);
         llamar.putExtra("user",user);
+        llamar.putExtra("idusuario",idusuario);
         startActivity(llamar);
     }
 

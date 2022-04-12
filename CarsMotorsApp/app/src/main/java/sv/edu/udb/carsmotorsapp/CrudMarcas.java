@@ -14,11 +14,17 @@ import android.widget.Toast;
 public class CrudMarcas extends AppCompatActivity {
 
     private EditText etMarca, etIdMarca;
+    String user;
+    private TextView Marca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_marcas);
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("user");
+        Marca= (TextView) findViewById(R.id.Marca);
+        Marca.setText("CRUD Marcas - "+user);
 
         etMarca = (EditText) findViewById(R.id.etMarca);
         etIdMarca = (EditText) findViewById(R.id.etIdMarca);

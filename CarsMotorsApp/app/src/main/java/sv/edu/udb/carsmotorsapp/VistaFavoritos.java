@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -16,7 +19,8 @@ public class VistaFavoritos extends AppCompatActivity {
     ArrayList<VehiculosVo> listvehiculos;
     RecyclerView recycleVehiculo;
     AdminSQLiteOpenHelper admin;
-    String user;
+    String user,idusuario;
+    TextView VehiculosFavoritos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,9 @@ public class VistaFavoritos extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         user = extras.getString("user");
+        VehiculosFavoritos = (TextView) findViewById(R.id.VehiculosFavoritos);
+        VehiculosFavoritos.setText("Vehiculos Favoritos - "+user);
+        idusuario = extras.getString("idusuario");
         admin = new AdminSQLiteOpenHelper(this,"CarsMotorsDB", null, 1);
 
         listvehiculos=new ArrayList<>();
@@ -32,6 +39,17 @@ public class VistaFavoritos extends AppCompatActivity {
         recycleVehiculo.setLayoutManager(new LinearLayoutManager(this));
         llenarvehiculos();
         AdapterDatos adapter=new AdapterDatos(listvehiculos);
+        adapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase bd= admin.getWritableDatabase();
+                Integer idfavoritoautomovil = listvehiculos.get(recycleVehiculo.getChildAdapterPosition(view)).getId();
+                Cursor fila=bd.rawQuery("DELETE FROM favoritos_automovil WHERE idusuario ='"+idusuario+"' AND idfavoritoautomovil ='"+idfavoritoautomovil+"'", null);
+                String eliminados = String.valueOf(fila.getCount());
+                Toast.makeText(getApplicationContext(),"Se elimino el vehiculo de favoritos. Refresca para ver cambios.", Toast.LENGTH_SHORT).show();
+                bd.close();
+            }
+        });
         recycleVehiculo.setAdapter(adapter);
     }
 
@@ -43,10 +61,6 @@ public class VistaFavoritos extends AppCompatActivity {
             listvehiculos.add(new VehiculosVo("Marca: "+fila.getString(0),"Modelo: "+fila.getString(1),"Año: "+fila.getString(2),"Color: "+fila.getString(3),"Capacidad: "+fila.getString(4),"Precio: "+fila.getString(5), fila.getString(6),fila.getInt(7)));
         }
 
-    }
-
-    public void QuitarFavorito(View v){
-       //Aca deberia ir el codigo para quitarlo sin tener que crear otra recyclerview
     }
 
 }

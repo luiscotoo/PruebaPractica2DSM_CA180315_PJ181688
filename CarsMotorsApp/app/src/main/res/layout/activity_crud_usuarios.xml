@@ -8,7 +8,6 @@
     tools:context=".CrudUsuarios">
 
 
-
     <TextView
         android:id="@+id/Usuario"
         android:layout_width="289dp"
@@ -21,9 +20,9 @@
         android:layout_marginTop="18dp"
         android:ems="10"
         android:text="CRUD Usuarios"
-        android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
         android:textSize="20dp"
         android:textStyle="bold" />
 

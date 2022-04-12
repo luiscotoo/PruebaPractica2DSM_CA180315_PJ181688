@@ -126,7 +126,7 @@
         android:background="@drawable/ovalbutton"
         android:backgroundTint="#8eb1c7"
         android:onClick="salir"
-        android:text="SALIR"
+        android:text="Cerrar sesión"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

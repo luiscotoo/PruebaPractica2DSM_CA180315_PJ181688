@@ -8,16 +8,23 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CrudColores extends AppCompatActivity {
 
     private EditText etColor, etIdColor;
+    String user;
+    private TextView Colores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_colores);
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("user");
+        Colores= (TextView) findViewById(R.id.Colores);
+        Colores.setText("CRUD Colores - "+user);
 
         etColor = (EditText) findViewById(R.id.etColor);
         etIdColor = (EditText) findViewById(R.id.etIdColor);

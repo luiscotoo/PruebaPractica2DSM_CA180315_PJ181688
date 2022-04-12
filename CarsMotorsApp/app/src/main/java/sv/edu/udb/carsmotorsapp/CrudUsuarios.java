@@ -8,16 +8,23 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CrudUsuarios extends AppCompatActivity {
 
     private EditText etIdUsuario, etNombre, etApellido, etEmail, etUser, etPassword, etTipo;
+    String user;
+    private TextView Usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_usuarios);
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("user");
+        Usuario = (TextView) findViewById(R.id.Usuario);
+        Usuario.setText("CRUD Usuario - "+user);
 
         etIdUsuario = (EditText) findViewById(R.id.etIdUsuario);
         etNombre = (EditText) findViewById(R.id.etNombre);
